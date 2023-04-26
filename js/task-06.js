@@ -8,12 +8,16 @@ input.addEventListener('blur', onCheckSymbols);
 
 function onCheckSymbols(event) {
     const symbolsEnteredLength = event.target.value.length;
-
-    if (symbolsEnteredLength === inputRuleSymbolLength) {
-        input.classList.add('valid');
-        input.classList.remove('invalid')
-    } else {
-        input.classList.remove('valid');
-        input.classList.add('invalid')
-    }
+    symbolsEnteredLength === inputRuleSymbolLength ? switchValidation('valid', 'invalid') : switchValidation('invalid', 'valid')
+    
 }
+
+
+function switchValidation(arg1, arg2) {
+    input.classList.add(arg1);
+    input.classList.remove(arg2)
+}
+
+
+
+

@@ -9,11 +9,18 @@ const ingredients = [
 
 
 
-ingredients.forEach((ingredient) => {
+
+
+const markup = ingredients.map((ingredient) => {
   const liIngredient = document.createElement('li');
-liIngredient.classList.add("item");
+  liIngredient.classList.add("item");
   liIngredient.textContent = ingredient;
+  return liIngredient;
+})
+  
 const ulIngredients = document.querySelector('ul');
-ulIngredients.appendChild(liIngredient);
-}, 0);
+
+
+ulIngredients.append(...markup);
+
 
